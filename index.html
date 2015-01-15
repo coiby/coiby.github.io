@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Coiby.GitHub.io : ">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Coiby.GitHub.io</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/coiby">View on GitHub</a>
+
+          <h1 id="project_title">Coiby.GitHub.io</h1>
+          <h2 id="project_tagline"></h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="如何科学上fang网qiang" class="anchor" href="#%E5%A6%82%E4%BD%95%E7%A7%91%E5%AD%A6%E4%B8%8Afang%E7%BD%91qiang" aria-hidden="true"><span class="octicon octicon-link"></span></a>如何“科学”上(fang)网(qiang)</h1>
+
+<p>最近防火墙近一年来也来越肆无忌惮，GoAgent、fqrouter等工具受到干扰而逐渐失效（因为Google IP被封，但fqrouter用的shadowsocks共用代理目前仍有效），所以去研究了翻墙方案，稍作总结，按照需求的复杂顺序推荐解决方案，有需要的人可以参考。</p>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td> </td>
+<td><p>镜像网站</p></td>
+<td><p>hosts(IPv4)</p></td>
+<td><p>hosts(IPv6)</p></td>
+<td><p>Shadowsocks</p></td>
+<td><p>VPN</p></td>
+</tr>
+<tr>
+<td><p>谷歌搜索</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr>
+<td><p>+Gmail网页版</p></td>
+<td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr>
+<td><p>+Youtube</p></td>
+<td><p>no</p></td>
+<td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr>
+<td><p>其它被封网站</p></td>
+<td><p>极少数</p></td>
+<td><p>（twitter,facebook,wikipedia,dropbox,onebox）</p></td>
+<td><p>同左，但增加IPv6 DNS可播放youtube</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr>
+<td><p>稳定性</p></td>
+<td><p>较稳定</p></td>
+<td><p>不稳定</p></td>
+<td><p>较稳定</p></td>
+<td><p>稳定</p></td>
+<td><p>稳定</p></td>
+</tr>
+<tr>
+<td><p>简便性</p></td>
+<td><p>简单</p></td>
+<td><p>较简单</p></td>
+<td><p>较简单</p></td>
+<td><p>较简单</p></td>
+<td><p>较简单</p></td>
+</tr>
+</table>
+
+<h2>
+<a id="镜像网站" class="anchor" href="#%E9%95%9C%E5%83%8F%E7%BD%91%E7%AB%99" aria-hidden="true"><span class="octicon octicon-link"></span></a>镜像网站</h2>
+
+<p>访问Google的镜像站</p>
+
+<ol>
+<li><p><a href="http://www.glgoo.com/">http://www.glgoo.com/</a></p></li>
+<li><p><a href="https://g2.cctv.com.edgesuite.net/f/1/1/1/dci.download.akamai.com/35985/159415/1/g/">https://g2.cctv.com.edgesuite.net/f/1/1/1/dci.download.akamai.com/35985/159415/1/g/</a></p></li>
+<li><p><a href="https://google2.azurewebsites.net/">https://google2.azurewebsites.net/</a></p></li>
+</ol>
+
+<p>注：2、3网站可能会更新，如果失效请访问<a href="https://github.com/greatfire/wiki">https://github.com/greatfire/wiki</a> 获取最新地址。</p>
+
+<p>其它镜像：</p>
+
+<ol>
+<li><p><a href="https://secure.hjc.im/">https://secure.hjc.im/</a></p></li>
+<li><p><a href="http://www.googleforchina.com">http://www.googleforchina.com</a> </p></li>
+</ol>
+
+<h2>
+<a id="ipv4-hosts" class="anchor" href="#ipv4-hosts" aria-hidden="true"><span class="octicon octicon-link"></span></a>IPv4 hosts</h2>
+
+<p>访问<a href="http://serve.netsh.org/pub/gethosts.php">http://serve.netsh.org/pub/gethosts.php</a> ，网站上提供了详细的说明和注意事项。</p>
+
+<h2>
+<a id="ipv6-hosts" class="anchor" href="#ipv6-hosts" aria-hidden="true"><span class="octicon octicon-link"></span></a>IPv6 hosts</h2>
+
+<p>教育网用户一般都有IPv6网络，且速度较快，而GFW目前对IPv6干扰能力有限，对有IPv6网络的用户非常推荐此方法。具体方式请访问 <a href="http://serve.netsh.org/pub/ipv6-hosts/">http://serve.netsh.org/pub/ipv6-hosts/</a> 。</p>
+
+<h2>
+<a id="shadowsocks" class="anchor" href="#shadowsocks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Shadowsocks</h2>
+
+<p>购买渠道：</p>
+
+<ol>
+<li>
+<a href="https://portal.shadowsocks.com/cart.php">shadowsocks.com</a> </li>
+<li><a href="https://www.shadowcheap.info/#price">shadowcheap.info</a></li>
+</ol>
+
+<p>支持的客户端包括Linux,OS X, Windows, iOS, Android, OpenWRT 路由器等，访问 <a href="http://shadowsocks.org/en/download/clients.html">shadowsocks.org</a> 获取相应的客户端。</p>
+
+<h3>
+<a id="自搭建shadowsocks" class="anchor" href="#%E8%87%AA%E6%90%AD%E5%BB%BAshadowsocks" aria-hidden="true"><span class="octicon octicon-link"></span></a>自搭建Shadowsocks</h3>
+
+<p>如果你对数据私密性要求比较高，可以自己搭建shadowsock服务器。此方法需要一定的动手能力，感兴趣者可以参考 <a href="http://sspai.com/t/6695">从零开始一站式翻 X 教程 </a></p>
+
+<h2>
+<a id="赛风3" class="anchor" href="#%E8%B5%9B%E9%A3%8E3" aria-hidden="true"><span class="octicon octicon-link"></span></a>赛风3</h2>
+
+<p>目前只支持Windows和Android（iOS已经出来beta版），通过邮件获取，发送邮件给<a href="mailto:get-global@psiphon3.com">get-global@psiphon3.com</a>，对方会自动回复下载链接地址和附件形式的软件。</p>
+
+<h2>
+<a id="vpn" class="anchor" href="#vpn" aria-hidden="true"><span class="octicon octicon-link"></span></a>VPN</h2>
+
+<p>对VPN试用不多，所以可以自行Google去了解。</p>
+
+<h2>
+<a id="gfw的技术" class="anchor" href="#gfw%E7%9A%84%E6%8A%80%E6%9C%AF" aria-hidden="true"><span class="octicon octicon-link"></span></a>GFW的技术</h2>
+
+<p>如果你对技术</p>
+
+<blockquote>
+<p>GFW具有重大的社会意义。无论是正面的社会意义，还是负面的意义。无论你是讨厌，还是憎恨。它都在那里。在可以预见的将来，墙还会继续存在。我们要学会如何与其共存。我是一个死搞技术的，就是打算搞技术到死的那种人。当我读到“西厢计划”的博客上的这么一段话时，我被深深的触动了。不是为了什么政治目的，不是为了什么远大理想，仅仅做为一个死搞技术的人显摆自己的价值，我也必须做些什么。博客上的原话是这么写的：</p>
+
+<blockquote>
+<p>作为个搞技术的人，我们要干点疯狂的事。如果我们不动手，我们就要被比我们差的远的坏技术人员欺负。这太丢人了。眼前就是，GFW这个东西，之前是我们不抱团，让它猖狂了。现在咱们得凑一起，想出来一个办法让它郁闷一下，不能老被欺负吧。要不，等到未来，后代会嘲笑我们这些没用的家伙，就象我们说别人“你怎么不反抗？”gfwrev.blogspot.com</p>
+</blockquote>
+
+<p>我把翻墙看成一场我们与GFW之间的博弈，是一个不断对抗升级的动态过程。目前整体的博弈态势来讲是GFW占了绝对的上风。我们花费了大量的金钱（买VPS买VPN），花费大量时间（学习各种翻墙技术），而GFW只需要简单发几个包，配几个路由规则就可以让你的心血都白费。
+GFW并不需要检查所有的上下行流量中是不是有不和谐的内容，很多时候只需要检查连接的前几个包就可以判断出是否要阻断这个连接。为了规避这种检查，我们就需要把所有的流量都通过第三方代理，还要忍受不稳定，速度慢等各种各样的问题。花费的是大量的研究的时间，切换线路的时间，找出是什么导致不能用的时间，当然还有服务器的租用费用和带宽费用。我的感觉是，这就像太极里的四两拨千斤。GFW只需要付出很小的成本，就迫使了我们去付出很大的反封锁成本，而且这种成本好像是越来越高了。
+这场博弈的不公平之处在于，GFW拥有国家的资源和专业的团队。而我们做为个体，愿意花费在翻墙上的时间与金钱是非常有限的。在竞争激烈的北上广深，每天辛苦忙碌的白领们。翻墙无非是为了方便自己的工作而已。不可能在每天上下班从拥挤的地铁中挤出来之后再去花费已经少得可怜的业余时间去学习自己不是翻墙根本不需要知道的名词到底是什么意思。于是乎，我们得过且过。不用Google也不会死，对不对。SSH加浏览器设置，搞一搞也就差不多能用就行啦。但是得过且过也越来越不好过了。从最开始的HTTP代理，到后来的SOCKS代理，到最近的OpenVPN，一个个阵亡。普通人可以使用的方式越来越少。博弈的天平远远不是平衡的，而是一边倒。
+...
+--<a href="https://docs.google.com/document/d/1mmMiMYbviMxJ-DhTyIGdK7OOg581LSD1CZV4XY1OMG8/pub">翻墙路由器的原理与实现</a></p>
+</blockquote>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-58592900-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
